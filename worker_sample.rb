@@ -6,6 +6,9 @@ class WorkerSample < Sinatra::Base
     
     @@logger = Logger.new('/tmp/sample-app.log')
 
+    get '/' do
+      "Hello World"
+    end
     post '/' do
         msg_id = request.env["HTTP_X_AWS_SQSD_MSGID"]
         data = request.body.read
